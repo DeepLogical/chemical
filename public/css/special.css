@@ -1,0 +1,103 @@
+.amitInput:focus + .amitLabel {
+  cursor: default;
+  pointer-events: none;
+}
+
+.amitInput {
+  margin-top: 0 !important;
+  display: unset !important;
+  border-radius: 0 !important;
+}
+
+.amitLabel {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.amitInput:focus + .amitLabel .graphic {
+  stroke-dashoffset: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+.graphic {
+  fill: none;
+  transform: scale3d(1, -1, 1);
+  transition: stroke-dashoffset 0.5s;
+  pointer-events: none;
+  stroke: #D81B60;
+  stroke-width: 6px;
+  stroke-dasharray: 962;
+  stroke-dashoffset: 962;
+}
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+  40% {
+    transform: perspective(400px) rotateX(-10deg);
+  }
+  70% {
+    transform: perspective(400px) rotateX(10deg);
+  }
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+.flipInX {
+  backface-visibility: visible !important;
+  animation-name: flipInX;
+}
+
+.amitDD > div > :nth-child(2) {
+  animation: flipInX 1s ease;
+  -moz-animation: flipInX 1s ease;
+  -webkit-animation: flipInX 1s ease;
+  backface-visibility: visible !important;
+  -moz-backface-visibility: visible !important;
+  data-wow-delay: ".1s";
+}
+
+.amitCheckbox {
+  position: relative;
+  border: none;
+}
+.amitCheckbox::before {
+  transition: all 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #A0A0A0;
+}
+.amitCheckbox:after {
+  content: "";
+  position: absolute;
+  top: -0.125rem;
+  left: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  background: #fff;
+  cursor: pointer;
+}
+
+.amitCheckbox:checked:before {
+  transform: rotate(-45deg);
+  height: 0.4rem;
+  width: 0.8rem;
+  border-color: #4F52BA;
+  border-top-style: none;
+  border-right-style: none;
+  border-width: 2px;
+}/*# sourceMappingURL=special.css.map */

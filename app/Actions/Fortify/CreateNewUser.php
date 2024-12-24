@@ -9,12 +9,13 @@ use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
 
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Traits\HasRoles; 
 use Cookie;
-use Ramsey\Uuid\Uuid;            
-            
+use Ramsey\Uuid\Uuid;
+
 class CreateNewUser implements CreatesNewUsers
 {
-    use HasRoles;
+    use HasRoles;  // This allows your class to use the HasRoles trait
     use PasswordValidationRules;
 
     /**

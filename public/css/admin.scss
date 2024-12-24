@@ -1,0 +1,149 @@
+$primary: #14213d;
+$action: #ad2e24;
+.ml1{ margin-left: 1em }
+.ml2{ margin-left: 2em }
+.ml3{ margin-left: 3em }
+.ml4{ margin-left: 4em }
+.ml5{ margin-left: 5em }
+.ml6{ margin-left: 6em }
+.ml7{ margin-left: 7em }
+.ml8{ margin-left: 8em }
+.ml9{ margin-left: 9em }
+.sitemap p, .schema p{
+    line-height: 1.5em;
+}
+.inlineText{
+    p{
+        display: inline;
+    }
+}
+table.admin{
+    margin-bottom: 1em;
+    border-radius: 10px;
+    overflow: hidden;
+    thead{
+        background-color: #36304a;
+        height: 60px;
+        color: white;
+        tr{
+            th{
+                padding: 5px;
+                font-size: 13px;
+                position: relative;
+                color: white;
+                min-width: 50px;
+                text-align: left;
+                &:hover{
+                    cursor: pointer;
+                }
+                padding-left: 10px;
+            }
+        }
+    }
+    tbody{
+        tr{
+            min-height: 50px;
+            td{
+                padding: 15px 5px;
+                font-size: 13px;
+            }
+        }
+        tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+    }
+    tr{
+        min-height: 50px;
+    }
+}
+.toggle-checkbox:checked {
+    right: 0;
+    border-color: #68D391;
+}
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #68D391;
+}
+.disabled-option {
+    color: #f00; /* Change this to the desired color */
+}
+.adminSidebar{
+    input{
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid white;
+        border-radius: 0;
+        color: #fff;
+        padding: 5px;
+        &:focus{
+            border-bottom: 2px solid white;
+        }
+    }
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #fff;
+        opacity: 1; /* Firefox */
+    }
+    
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: #fff;
+    }
+    
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color: #fff;
+    }
+}
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-thumb { background: #14213d; }
+@media only screen and (max-width: 768px) {
+    ::-webkit-scrollbar { width: 3px; }
+}
+.threeDots{
+    position: relative;
+    width: 30px;
+    img{
+        width: 30px;
+        cursor: pointer;
+    }
+    .dotOptions{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        box-shadow: 1px 1px 5px #aaa;
+        transition: 0.5s all;
+        z-index: 100;
+        button, a, li{
+            white-space: nowrap;
+            padding: 10px 1em;
+            width: 100%;
+            text-align: left;
+            &:hover{
+                background: $action;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+        a{
+            display: block;
+        }
+    }
+}
+.paginate{
+    nav{
+        div:nth-child(2) {
+            display: block;
+            margin: 0 auto;
+            p{
+                text-align: center;
+                padding: 1em 0;
+            }
+        }
+    }
+}
+button.not_selected{
+    padding: 5px 16px;
+    background: #eee;
+    border-radius: 5px;
+}
+.select2-container{
+    width: 100% !important;
+}

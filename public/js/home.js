@@ -1,0 +1,1 @@
+$(document).ready(function(){$(window).scroll(function(){e=$(".achieve"),i=$(window).scrollTop(),n=i+$(window).height(),o=$(e).offset().top,o+$(e).height()<=n&&o>=i&&!t&&(t=!0,$(".value").each(function(){$(this).prop("Counter",0).animate({Counter:$(this).text()},{duration:4e3,easing:"swing",step:function(t){$(this).text(Math.ceil(t))}})}));var e,i,n,o});var t=!1});

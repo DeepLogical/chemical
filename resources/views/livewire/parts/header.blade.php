@@ -6,12 +6,8 @@
             </div>
             <div class="hidden sm:flex items-center justify-around">
                 <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('Home') }}</x-nav-link>
-                <x-nav-link href="{{ route('fileSharingListing') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('Study Material') }}</x-nav-link>
-                <x-nav-link href="{{ route('courseListing') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('Courses') }}</x-nav-link>
                 <x-nav-link href="{{ route('about') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('About Us') }}</x-nav-link>
-                <x-nav-link href="{{ route('teacherListing') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('Teachers') }}</x-nav-link>
                 <x-nav-link href="{{ route('blogs') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('Blogs') }}</x-nav-link>
-                <x-nav-link href="{{ route('vedioListing') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('Vedios') }}</x-nav-link>
                 <x-nav-link href="{{ route('contact') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('Contact Us') }}</x-nav-link>
                 <ul class="flex flex-wrap items-center justify-end">
                     @if( !Auth::check() )
