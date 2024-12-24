@@ -1,0 +1,22 @@
+{
+    "name": "deep/admin",
+    "description": "admin System by Deepak",
+    "authors": [{
+        "name": "Deep",
+        "email": "almora1deepak@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Deep\\Admin\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Deep\\Admin\\Providers\\PagesServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "name": "deep/pages",
+    "description": "pages System by DEEPAK",
+    "authors": [{
+        "name": "DEEP",
+        "email": "almora1deepak@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Deep\\Pages\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Deep\\Pages\\Providers\\PagesServiceProvider"
+            ]
+        }
+    }
+}

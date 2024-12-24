@@ -1,0 +1,22 @@
+{
+    "name": "deep/coaching",
+    "description": "Coaching System by DEEPAK",
+    "authors": [{
+        "name": "DEEP",
+        "email": "almora1deepak@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Deep\\Coaching\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Deep\\Coaching\\Providers\\PagesServiceProvider"
+            ]
+        }
+    }
+}

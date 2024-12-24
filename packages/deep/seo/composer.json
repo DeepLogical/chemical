@@ -1,0 +1,22 @@
+{
+    "name": "deep/seo",
+    "description": "seo System by DEEPAK",
+    "authors": [{
+        "name": "DEEP",
+        "email": "almora1deepak@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Deep\\Seo\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Deep\\Seo\\Providers\\PagesServiceProvider"
+            ]
+        }
+    }
+}

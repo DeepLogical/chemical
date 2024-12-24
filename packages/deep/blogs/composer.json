@@ -1,0 +1,22 @@
+{
+    "name": "deep/blogs",
+    "description": "blogs System by Deepak",
+    "authors": [{
+        "name": "DEEP",
+        "email": "almora1deepak@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Deep\\Blogs\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Deep\\Blogs\\Providers\\PagesServiceProvider"
+            ]
+        }
+    }
+}
