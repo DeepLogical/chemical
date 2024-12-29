@@ -1,5 +1,4 @@
 {
-    "$schema": "https://getcomposer.org/schema.json",
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
@@ -9,34 +8,35 @@
         { "type": "path", "url": "./packages/deep/admin/" },
         { "type": "path", "url": "./packages/deep/blogs/" },
         { "type": "path", "url": "./packages/deep/pages/" },
+        { "type": "path", "url": "./packages/deep/products/" },
         { "type": "path", "url": "./packages/deep/seo/" }
     ],
-
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "deep/admin": "*",
         "deep/blogs": "*",
         "deep/pages": "*",
+        "deep/products": "*",
         "deep/seo": "*",
-        "intervention/image": "*",
+        "intervention/image": "^2.7",
         "jenssegers/optimus": "^1.1",
-        "laravel/framework": "^11.31",
+        "laravel/framework": "^11.9",
         "laravel/jetstream": "^5.3",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
         "maatwebsite/excel": "^3.1",
-        "ramsey/uuid": "^4.7",
-        "spatie/laravel-permission": "^6.10",
-        "spatie/laravel-sluggable": "^3.7"
+        "rap2hpoutre/laravel-log-viewer": "^2.4",
+        "spatie/laravel-permission": "^6.9",
+        "spatie/laravel-sluggable": "^3.6",
+        "stevebauman/location": "^7.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
-        "laravel/pail": "^1.1",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^8.1",
+        "nunomaduro/collision": "^8.0",
         "phpunit/phpunit": "^11.0.1"
     },
     "autoload": {
@@ -44,7 +44,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Helpers/AdminHelpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -54,7 +57,8 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan vendor:publish --force --tag=livewire:assets --ansi"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
@@ -66,10 +70,6 @@
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
-        ],
-        "dev": [
-            "Composer\\Config::disableProcessTimeout",
-            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
         ]
     },
     "extra": {

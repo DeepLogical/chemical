@@ -7,15 +7,14 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
+use Illuminate\Validation\Rule;
 
 use Spatie\Permission\Models\Role;
-use Spatie\Permission\Traits\HasRoles; 
 use Cookie;
-use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\Uuid; 
 
 class CreateNewUser implements CreatesNewUsers
 {
-    use HasRoles;  // This allows your class to use the HasRoles trait
     use PasswordValidationRules;
 
     /**
@@ -51,7 +50,7 @@ class CreateNewUser implements CreatesNewUsers
             'phone'                         => $input['phone'],
             'wallet'                        => 0,
             'reward'                        => 0,
-            'referral_code'                 => 'ChefPoint-'.$uuid,
+            'referral_code'                 => 'Chemical-'.$uuid,
             'referred_by'                   => $referred_by_id,
         ])->assignRole('user');
     }

@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use Deep\Seo\Models\Meta;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -19,6 +21,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // view()->share('meta', Meta::metatag());
     }
 }

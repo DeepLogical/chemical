@@ -1,6 +1,6 @@
 {
-    "name": "deep/coaching",
-    "description": "Coaching System by DEEPAK",
+    "name": "deep/chemical",
+    "description": "Chemical System by DEEPAK",
     "authors": [{
         "name": "DEEP",
         "email": "almora1deepak@gmail.com"
@@ -9,13 +9,13 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Deep\\Coaching\\": "src/"
+            "Deep\\Chemical\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Deep\\Coaching\\Providers\\PagesServiceProvider"
+                "Deep\\Chemical\\Providers\\PagesServiceProvider"
             ]
         }
     }

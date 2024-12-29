@@ -43,6 +43,5 @@ class Home extends Component
         $this->data = Pages::select('id', 'url')->where('url', '/')->first();
     }
 
-    public function render(){ return view('livewire.pages.home')->layout('layouts.app');
-    }
+    public function render(){ return view('livewire.pages.home'); }
 }

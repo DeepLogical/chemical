@@ -2,7 +2,7 @@
     "name": "deep/blogs",
     "description": "blogs System by Deepak",
     "authors": [{
-        "name": "DEEP",
+        "name": "Deepak Tiwari",
         "email": "almora1deepak@gmail.com"
     }],
     "minimum-stability": "dev",

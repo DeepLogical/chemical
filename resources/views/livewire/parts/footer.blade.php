@@ -18,7 +18,8 @@
                         <h2 class="font-bold py-3 text-white subHeading">Explore Us</h2>
                         <ul>
                             <li class="text-white"><a href="/">Home</a></li>
-                                <li class="text-white"><a href="about-us">About Us</a></li>
+                            <li class="text-white"><a href="course-listing">Courses</a></li>
+                            <li class="text-white"><a href="about-us">About Us</a></li>
                             <li class="text-white"><a href="blog">BLogs</a></li>
                             <li class="text-white"><a href="contact-us">Contact us</a></li>
                         </ul>

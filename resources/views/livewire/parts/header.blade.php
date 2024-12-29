@@ -7,6 +7,7 @@
             <div class="hidden sm:flex items-center justify-around">
                 <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('Home') }}</x-nav-link>
                 <x-nav-link href="{{ route('about') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('About Us') }}</x-nav-link>
+                <x-nav-link href="{{ route('products') }}" :active="request()->routeIs('products')" class="pr-5">{{ __('products') }}</x-nav-link>
                 <x-nav-link href="{{ route('blogs') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('Blogs') }}</x-nav-link>
                 <x-nav-link href="{{ route('contact') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('Contact Us') }}</x-nav-link>
                 <ul class="flex flex-wrap items-center justify-end">

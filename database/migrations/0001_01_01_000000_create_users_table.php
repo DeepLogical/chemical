@@ -11,25 +11,34 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Create users table
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('phone')->unique();
+            $table->decimal('wallet', 10, 2)->default(0); // Wallet column
             $table->string('password');
-            $table->rememberToken();
+            $table->string('referral_code')->nullable();
+            $table->unsignedBigInteger('referred_by')->nullable();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->rememberToken();
             $table->timestamps();
+
+            // Add foreign key constraint for referred_by
+            $table->foreign('referred_by')->references('id')->on('users')->onDelete('SET NULL');
         });
 
+        // Create password_reset_tokens table
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
             $table->timestamp('created_at')->nullable();
         });
 
+        // Create sessions table
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->foreignId('user_id')->nullable()->index();
@@ -45,6 +54,11 @@ return new class extends Migration
      */
     public function down(): void
     {
+        // Drop the foreign key first to avoid errors
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['referred_by']);
+        });
+
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');

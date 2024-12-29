@@ -5,10 +5,10 @@ import typography from '@tailwindcss/typography';
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './vendor/laravel/jetstream/**/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
+        // './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        // './vendor/laravel/jetstream/**/*.blade.php',
+        // './storage/framework/views/*.php',
+        // './resources/views/**/*.blade.php',
         './resources/views/**/*.blade.php',
         './packages/deep/**/resources/views/**/**/*.blade.php',
     ],

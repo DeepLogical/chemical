@@ -1,3 +1,70 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'toastr.css';
+@import 'swiper.css';
+@import 'style.css';
+
+[x-cloak] {
+    display: none;
+}
+
+@layer base {
+    .row{
+        @apply grid grid-cols-12 gap-2 md:gap-4
+    }
+    .heading{
+        @apply text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-3
+    }
+    .smallHeading{
+        @apply text-base md:text-lg lg:text-xl font-bold mb-2
+    }
+    .subHeading{
+        @apply text-base md:text-lg lg:text-xl font-bold mb-1
+    }
+    .newsHeading{
+        @apply text-xs md:text-sm lg:text-base xl:text-lg font-bold
+    }
+    .newsHeadingHorizontal{
+        @apply text-base md:text-lg lg:text-xl xl:text-2xl font-bold
+    }
+    .paragraph{
+        @apply text-xs md:text-sm lg:text-base
+    }
+    .btn{
+        @apply bg-primary text-center text-sm md:text-base lg:text-lg font-bold text-white hover:bg-white hover:text-primary border-2 border-primary rounded-lg transition duration-700 ease-in-out whitespace-nowrap inline-block w-fit hover:cursor-pointer px-3 lg:px-6 xl:px-8 py-2 lg:py-2 my-2
+    }
+    .whiteBtn{
+        @apply  bg-white text-center text-sm md:text-base lg:text-lg font-bold text-primary rounded-lg hover:bg-white hover:text-primary border-2 border-primary transition duration-700 ease-in-out whitespace-nowrap inline-block w-fit hover:cursor-pointer px-3 lg:px-6 xl:px-8 py-2 lg:py-2
+    }    
+    .moreBtn{
+        @apply text-xs md:text-sm w-fit bg-action text-white border rounded hover:bg-primary hover:border-action hover:text-white transition duration-700 ease-in-out whitespace-nowrap block px-2 md:px-3 py-1 md:py-2
+    }
+    .ultaBtn{
+        @apply text-xs md:text-sm font-bold w-fit bg-white text-primary border-2 border-primary rounded hover:bg-primary hover:border-primary hover:text-white transition duration-700 ease-in-out whitespace-nowrap block px-2 md:px-3 py-1 md:py-2
+    }
+    .editBtn{
+        @apply w-fit bg-action text-white border rounded hover:bg-primary hover:border-action hover:text-white transition duration-500 ease-in-out whitespace-nowrap block px-4 py-1
+    }
+    .fijb{
+        @apply flex items-center justify-between
+    }
+    .cancelBtn{
+        @apply bg-primary text-white py-2 px-6 text-sm rounded-full inline-block
+    }    
+    .formInput{
+        @apply w-full border-gray-300 rounded border p-2
+    }
+    .formLabel{
+        @apply block text-sm font-medium text-gray-700
+    }
+    .error{
+        @apply text-primary font-bold 
+    }
+    .imgExpand{
+        @apply group-hover:scale-110 transition duration-700 ease-in-out
+    }
+    .action_btn{
+        @apply hover:cursor-pointer h-6 w-6
+    }
+}

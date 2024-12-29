@@ -1,11 +1,11 @@
 <?php
 
-namespace Deep\Coaching\Providers;
+namespace Deep\Sample\Providers;
 
 use Livewire\Livewire;
 use Illuminate\Support\ServiceProvider;
 
-// use Deep\Coaching\Http\Livewire\Admin\AddUpdateBlog;
+// use Deep\Sample\Http\Livewire\Admin\AddUpdateBlog;
 
 class PagesServiceProvider extends ServiceProvider
 {

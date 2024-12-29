@@ -9,7 +9,7 @@ use Deep\Blogs\Models\Blogmeta;
 
 class BlogPage extends Component
 {
-    public $search, $heading = "Pradeep Insightz", $blogMeta, $data;
+    public $search, $heading = "Chemicals Insightz", $blogMeta, $data;
 
     public function loadMore(){ 
         $this->perPage += 20;

@@ -20,7 +20,7 @@
                     <td><a href="/{{ $i->type }}/{{ $i->url }}" target="_blank">{{ $i->name }}<br/>{{ $i->url }}</a></td>
                     <td>
                         @if( optional($i->media)->path )
-                            <img src="/storage/blogmeta/{{ optional($i->media)->path }}" alt="" class="w-32">
+                            <img src="{{ optional($i->media)->path }}" alt="" class="w-32">
                         @endif
                     </td>
                     <td>

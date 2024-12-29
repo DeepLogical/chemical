@@ -1,0 +1,22 @@
+{
+    "name": "deep/products",
+    "description": "Products System by DEEPAK",
+    "authors": [{
+        "name": "Deepak Tiwari",
+        "email": "almora1deepak@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Deep\\Products\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Deep\\Products\\Providers\\PagesServiceProvider"
+            ]
+        }
+    }
+}

@@ -185,6 +185,7 @@ function decode($value){
             [ "type" => "instructor", "path" => 'instructor', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
             [ "type" => "course", "path" => 'course', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
             [ "type" => "teacher", "path" => 'teacher', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
+            [ "type" => "product", "path" => 'product', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
         ];
 
         $row = $data[ array_search($type, array_column( $data, "type" )) ];

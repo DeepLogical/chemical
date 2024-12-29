@@ -65,6 +65,7 @@
             @endforeach
         </div>
     </section>
+
     <section class="container pt-12">
         <div class="text-center">
             <h2 class="heading">The Clear Choice for Success</h2>
