@@ -97,13 +97,14 @@
                 // Pages
         
                 // FORMS
-                    // [ "link" => "adminContact", "name" => "Forms",
-                    //     "sublinks" => [
-                    //         [ "parent" => "Forms", "link" => "adminContact", "name" => "Contact" ],
-                    //         [ "parent" => "Forms", "link" => "adminSubscription", "name" => "Subscription" ],
-                    //         [ "parent" => "Forms", "link" => "adminJoinUs", "name" => "Job Applications" ],
-                    //     ]
-                    // ],
+                    [ "link" => "adminContact", "name" => "Forms",
+                        "sublinks" => [
+                            [ "parent" => "Forms", "link" => "adminContact", "name" => "Contact" ],
+                            [ "link" => "adminForm", "name" => "Product enquiry" ],
+                            // [ "parent" => "Forms", "link" => "adminSubscription", "name" => "Subscription" ],
+                            // [ "parent" => "Forms", "link" => "adminJoinUs", "name" => "Job Applications" ],
+                        ]
+                    ],
                 // FORMS
         
                 // SEO

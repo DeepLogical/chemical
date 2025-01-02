@@ -17,18 +17,18 @@ export default {
     theme: {
         extend: {
             colors:{
-                'primary': '#294551',
+                'primary': '#3B3D3C',
                 'action': '#237BFF',
                 'grey': '#747474',
                 'lightBg': '#D6ECEE',
                 'lightBack' : '#ECF2F0'
             },
             backgroundColor: {
-                'primary': '#294551',
+                'primary': '#3B3D3C',
                 'action': '#237BFF',
                 'grey': '#747474',
                 'lightBg': '#D6ECEE',
-                'lightBack' : '#ECF2F0'
+                'lightBack' : '#0000009e'
 
             },
             width:{

@@ -7,6 +7,7 @@ use Livewire\Component;
 use DB;
 use Auth;
 use Deep\Products\Models\Product;
+use Deep\Products\Models\ProductRequest;
 
 class Form extends Component
 {
@@ -30,12 +31,12 @@ class Form extends Component
             'email'                     => 'required|email',
             'phone'                     => 'required|numeric|digits:10',
             'product_id'                => 'required|numeric',
-            'location'                  => 'required|numeric',
-            'quantity'                  => 'required|numeric',
+            'location'                  => 'required',
+            'quantity'                  => 'required',
         ]);
         
         DB::transaction(function () {
-            $entry = Form::create([
+            $entry = ProductRequest::create([
                 'user_id'                   =>  Auth::check() ? Auth::user()->id : null,
                 'name'                      =>  $this->name,
                 'email'                     =>  $this->email,

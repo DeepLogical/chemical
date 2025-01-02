@@ -1,7 +1,8 @@
 <div class="container py-5 md:py-12">
     <div style="max-width: 60%; margin: 0 auto">
         <div class="mb-5">
-            <a href="/"><img src="/images/logo.png" alt="{{ config('deep.brand') }}" class="" style="max-width: 150px"></a>
+            <p class="heading">ADP Traders</p>
+            <!-- <a href="/"><img src="/images/logo.png" alt="{{ config('deep.brand') }}" class="" style="max-width: 150px"></a> -->
             <h1 class="text-action font-bold text-2xl py-3">Login</h1>
         </div>
         <form wire:submit.prevent="submit" method="POST" autocomplete="off">

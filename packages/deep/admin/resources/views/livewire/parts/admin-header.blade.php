@@ -1,7 +1,8 @@
 <div class="fijb nav w-full bg-primary deepShadow p-3 z-50">
     <div class="fijb w-full">
         <div style="min-width: 150px">
-            <a href="/"><img src="/images/logo.png" alt="" class="w-full logo"></a>
+            <p class="heading">ADP Traders</p>
+            <!-- <a href="/"><img src="/images/logo.png" alt="" class="w-full logo"></a> -->
         </div>
         <ul class="fijb">
             @foreach( $data as $i ) <li class="text-white pr-3 md:pr-5 font-bold"><a href="{{ route($i['link']) }}">{{ $i['name'] }}</a></li> @endforeach

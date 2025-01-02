@@ -5,9 +5,13 @@
             <tr>
                 <th>Sl No.</th>
                 <th>User</th>
-                <th>Board</th>
-                <th>Grade</th>
+                <th>Location</th>
+                <th>Company</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Message</th>
                 <th>Status</th>
+                <th>Admin Remarks</th>
                 <th>Date</th>
                 <th>Action</th>
             </tr>

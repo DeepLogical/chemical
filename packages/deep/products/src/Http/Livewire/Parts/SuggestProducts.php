@@ -14,8 +14,8 @@ class SuggestProducts extends Component
         $this->data = Product::active()->limit(15)->inRandomOrder()->get();
 
         $hp                         =   getHP( $this->model, $this->model_id, 'product_heading', 'product_text' );
-        $this->heading              =   (!empty($hp) && isset($hp['h'])) ? $hp['h'] : "Interesting Reads";
-        $this->paragraph            =   (!empty($hp) && isset($hp['p'])) ? $hp['p'] : "Beautifully crafted products and articles";
+        // $this->heading              =   (!empty($hp) && isset($hp['h'])) ? $hp['h'] : "Products";
+        // $this->paragraph            =   (!empty($hp) && isset($hp['p'])) ? $hp['p'] : "Beautifully crafted products and articles";
     }
 
     public function render(){ return view('deep::livewire.parts.suggest-products'); }

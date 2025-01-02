@@ -1,5 +1,4 @@
-<form wire:submit.prevent="submit" method="POST" autocomplete="off">
-    @honeypot    
+<form wire:submit.prevent="submit" method="POST" autocomplete="off">    
     <div class="mb-3">
         <input type="text" wire:model="name" class="formInput" placeholder="Full Name *" required>
         @error('name') <span class="error">{{ $message }}</span> @enderror

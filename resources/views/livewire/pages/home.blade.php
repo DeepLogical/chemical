@@ -1,139 +1,129 @@
 <div>
-    <div class="row container">
-        <div class="col-span-12 md:col-span-8 flex-col justify-center flex">
-            <h1 class="heading text-primary text-left">Transform Your Learning Journey with Expert Coaching</h1>
-            <p class="paragraph">Unlock your potential with expert coaching, personalized support, and proven strategies to help you achieve academic excellence and success.</p>
-            <button class="btn my-2">Read More</button>
+    <div class="row relative">
+        <div class="col-span-12 md:col-span-12">
+            <img src="images/static/banners/banner1.jpg" alt="banner1" class="w-fit">
         </div>
-        <div class="col-span-12 md:col-span-4">
-        <img src="/images/static/banners/01.jpg" alt="" class="pt-2">
-        </div>
-    </div>
-    <section class="bg-primary py-12">
-        <div class="container">
-            <h2 class="heading text-center text-white">Celebrating Success and Accomplishments</h2>
-            <p class="text-white text-center">We proudly celebrate the achievements of our students, recognizing their hard work and dedication on the path to success.</p>
-
-            @if( $data ) @livewire('achievement', [ 'model' => 'Page', 'model_id' => $data->id ]) @endif
-
-        </div>
-    </section>
-
-    <div class="py-12 container text-center">
-        <h2 class="heading">Educational Journeys: Inspiring Success Across Boards</h2>
-        <p class="paragraph text-center">Our programs empower students to thrive across diverse educational paths, fostering critical thinking and creativity for future success.</p>
-        <button class="btn">Know More</button>
-    </div>
-    
-    <section class="pt-12">
-        <div class="row container">
-            <div class="col-span-12 md:col-span-6">
-                <img src="/images/static/banners/01.jpg" alt="">
+        <div class="bg-lightBack h-full w-full absolute top-0 left-0">
+            <div class=" absolute top-0 left-0 right-0 h-full flex flex-col items-center justify-center px-12 mx-0 md:mx-12 z-50">
+                <h1 class="heading text-white">Serving the entire chemical supply chain’s distribution business</h1>
+                <p class="smallHeading text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In dolorem corrupti architecto, magni deserunt itaque ratione sed est laborum ea.</p>
+                <a href="/contact-us"><button class="btn">Place Enquiry Now</button></a>
             </div>
-            <div class="col-span-12 md:col-span-6 flex flex-col justify-center h-full">
-                <h2 class="heading text-left">Unlock Knowledge in a Global Learning Community</h2>
-                <p class="paragraph">Join our global learning community, where students connect, share insights, and unlock limitless knowledge for personal and academic growth.</p>
-                <div class="">
-                    @foreach ($learning as $i)
-                    <div class="flex py-2">
-                        <div class="rounded-full">
-                            <img src="/images/icons/static/study/{{ $i ['img'] }}" alt="{{ $i ['name'] }}" class="w-40 my-2 ">
-                        </div>
-                        <div class="md:pl-3">
-                            <h3 class="subHeading">{{ $i ['name'] }}</h3>
-                            <p class="paragraph">{{ $i ['text'] }}</p>
-                        </div>
+        </div>
+    </div>
+    <section>
+        <div class="container py-12">
+            <h2 class="heading text-center">About ADP Trading Company</h2>
+            <p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores commodi sequi cumque eligendi quam architecto alias, expedita, consequuntur est error velit dolorum labore? Doloribus beatae nostrum, illum itaque perspiciatis at.</p>
+            <div class="row py-2">
+                @foreach ($about as $i)
+                    <div class="cols-span-12 md:col-span-3 p-5 border shadow-lg hover:shadow-xl rounded-md">
+                        <img src="images/static/about/{{$i['img']}}" alt="best-quality" class="w-11 mb-2">
+                        <p class="smallHeading">{{$i['name']}}</p>
+                        <p class="paragraph">{{$i['text']}}</p>
                     </div>
-                    @endforeach
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
 
-    <section class="bg-lightBg mb-12 py-12">
-        <div class= "container text-center">
-            <h2 class="heading">Unlock Your Potential with Learning</h2>
-            <p class="paragraph text-center pb-5">Unlocking your potential through learning leads to growth, new opportunities, and the confidence to navigate life's challenges successfully.</p>
-        </div>
-        <div class="row container">
-            @foreach ($benifit as $i)
-            <div class="col-span-12 md:col-span-4 bg-white  group hover:bg-primary transition duration-300 ease-in-out rounded-md p-3 md:p-5">
-                <img src="/images/icons/static/study/{{ $i ['img'] }}" alt="{{ $i ['name'] }}" class="w-60 rounded-full">
-                <h4 class="subHeading group-hover:text-white transition duration-300 ease-in-out pt-2">{{ $i ['name'] }}</h4>
-                <p class="paragraph group-hover:text-white transition duration-300 ease-in-out">{{ $i ['text'] }}</p>
+    <section class="relative">
+        <img src="images/static/lab.jpg" alt="banner1" class="w-fit">
+        <div class="bg-lightBack h-full w-full absolute top-0 left-0">
+            <div class=" absolute top-0 left-0 right-0 h-full flex flex-col items-center justify-center px-12 mx-0 md:mx-12 z-50">
+                <h1 class="heading text-white">Distributors and Marketing Agents</h1>
+                <p class="smallHeading text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. In dolorem corrupti architecto, magni deserunt itaque ratione sed est laborum ea.</p>
+                <a href="/contact-us"><button class="btn">Check More</button></a>
             </div>
+        </div>
+    </section>
+
+    <section class="py-12">
+        <div class="container">
+            <h3 class="heading text-center">Find Your Product Requirement</h3>
+            <p class="paragraph text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quam incidunt pariatur, at consequatur et ut aspernatur explicabo adipisci aliquam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quam incidunt pariatur, at consequatur et ut aspernatur explicabo adipisci aliquam.</p>
+        </div>
+        @livewire ('suggestProducts')
+    </section>
+
+    <section class="container">
+        <h3 class="heading text-center">Application Industries or Markets</h3>
+        <p class="paragraph text-center pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas, quod incidunt! Repellendus, laborum assumenda? Voluptas fugit deleniti iusto perferendis sapiente?</p>
+        <div class="row container py-2">
+            @foreach ($industries as $i)
+                <div class="cols-span-12 md:col-span-6 p-5 border shadow-lg hover:shadow-xl rounded-md">
+                    <img src="images/icons/services/{{$i['img']}}" alt="{{$i['name']}}" class="w-11 mb-2 mx-auto">
+                    <p class="smallHeading text-center">{{$i['name']}}</p>
+                    <p class="paragraph text-center">{{$i['text']}}</p>
+                </div>
             @endforeach
         </div>
     </section>
-
-    <section class="container pt-12">
-        <div class="text-center">
-            <h2 class="heading">The Clear Choice for Success</h2>
-            <p class="paragraph text-center">We offer the guidance, tools, and resources necessary to help you succeed. Our commitment to excellence and personalized support makes us the clear choice for anyone looking to achieve their goals with confidence.</p>
-            <button class="btn my-3">Know More</button>
-        </div>
+    
+    <section class="container py-12">
         <div class="row">
-            <div class="col-span-12 md:col-span-4">
-                <div class="flex flex-col justify-evenly h-full">
-                    @foreach ($choose as $i)
-                        <div class="flex deepShadow rounded-md p-3">
-                            <div class="pl-3">
-                                <h5 class="subHeading">{{ $i['name'] }}</h5>
-                                <p class="paragraph">{{ $i['text'] }}</p>
-                            </div>
-                        </div>
-                    @endforeach
+            <div class="col-span-12 md:col-span-6">
+                <h4 class="heading">Company History, Present and the Future</h4>
+                <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, aperiam modi! Consequuntur ratione aut assumenda deserunt molestias. Aut, accusamus eius?</p>
+            </div>
+            <div class="col-span-12 md:col-span-6 border shadow-lg rounded-md overflow-hidden">
+                <div class="row">
+                    <div class="col-span-12 md:col-span-6 flex flex-col justify-between p-2">
+                        <p class="heading text-left">We Started In Year
+                        1980</p>
+                        <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, obcaecati?</p>
+                        <button class="btn">Read More</button>
+                    </div>
+                    <div class="col-span-12 md:col-span-6 relative" style="background-image: url('images/static/worker.jpg'); background-size: cover; background-position: center;">
+                        <!-- <img src="images/static/worker.jpg" alt=""> -->
+                        <div class="tint h-full w-full absolute top-0 left-0"></div>
+                    </div>
                 </div>
             </div>
-            <div class="col-span-12 md:col-span-4">
-                <img src="images/static/why.jpg" alt="" class="">
+        </div>
+        <div class="row pt-12">
+            <div class="col-span-12 md:col-span-4 flex flex-col justify-between border shadow-lg rounded-md overflow-hidden p-2">
+                <p class="heading text-left">We Started In Year
+                1980</p>
+                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, obcaecati?</p>
+                <button class="btn">Read More</button>
             </div>
-            <div class="col-span-12 md:col-span-4">
-                <div class="flex flex-col justify-evenly h-full">
-                    @foreach ($chooses as $i)
-                        <div class="flex deepShadow rounded-md p-3">
-                            <div class="pl-3">
-                                <h5 class="subHeading">{{ $i['name'] }}</h5>
-                                <p class="paragraph">{{ $i['text'] }}</p>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
+            <div class="col-span-12 md:col-span-8 flex flex-col justify-between p-2 rounded-md bg-primary">
+                @if( $data ) @livewire('achievement', [ 'model' => 'Page', 'model_id' => $data->id ]) @endif
             </div>
         </div>
     </section>
 
-    <section class="bg-primary py-12">
-        <div class="container text-center">
-            <h2 class="heading text-white">Boards</h2>
-            <p class="paragraph text-center text-white pb-3">Educational boards define curricula and assessments, guiding students through structured learning pathways while fostering essential skills for academic success.</p>
-        </div>
-    </section>
-
-    <section>
-        <div class="row container pb-12">
-            <div class="col-span-12 md:col-span-4">
-                <img src="images/static/about.jpg" alt="">
-            </div>
-            <div class="col-span-12 md:col-span-8 flex flex-col justify-center md:pl-5">
-                <h3 class="heading mb-3">Our Vision</h3>
-                <p class="paragraph">We envision a world where education is not only accessible to everyone but also engaging and transformative. Our goal is to create an environment that fosters lifelong learning, allowing individuals from all backgrounds to unlock their potential. By embracing innovative teaching methods and utilizing advanced technology, we aim to inspire curiosity and passion for knowledge. We believe that education should empower learners to adapt and thrive in an ever-changing world, preparing them for future challenges and opportunities. Through our commitment to inclusivity and excellence, we strive to shape a brighter future for all.</p>
-                <a href="about-us" class="btn my-5">Know All</a>
-            </div>
-        </div>
-    </section>
-    <section class="bg-lightBack">
-        <div class="row container py-12">
-            <div class="col-span-12 md:col-span-5">
-                <img src="images/static/join.jpg" alt="" class="p-3">
-            </div>
-            <div class="col-span-12 md:col-span-7">
-                <div class="flex flex-col justify-center h-full">
-                    <h3 class="heading">Shaping the Future of Learning</h3>
-                    <p class="paragraph">
-                    Shaping the Future of Learning envisions an inclusive education system that fosters lifelong learning. By embracing innovative teaching methods and advanced technology, we empower individuals to adapt, thrive, and unlock their potential, creating a brighter future for all.</p>
-                    <button class="btn my-3">Sign up for Free</button>
+    <section class="container">
+        <h4 class="heading text-center">9 Key Tenets of ADP Trading Company</h4>
+        <p class="paragraph text-center pb-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid labore facere totam minus, deserunt sed quaerat numquam laborum quisquam quo.</p>
+        <div class="row">
+            @foreach ($tenets as $i)
+                <div class="col-span-12 md:col-span-4 relative border shadow-lg hover:shadow-xl rounded-md overflow-hidden">
+                    <img src="images/static/tenets/{{$i['img']}}" alt="{{$i['name']}}">
+                    <div class="bg-lightBack h-full w-full absolute top-0 left-0 flex flex-col justify-center items-center">
+                        <p class="smallHeading text-white text-center">{{$i['name']}}</p>
+                        <p class="paragraph text-white text-center">{{$i['text']}}</p>
+                    </div>
                 </div>
+            @endforeach
+        </div>
+    </section>
+    
+    <section class="py-12">
+        @livewire ('suggestBlogs')
+    </section>
+    
+    <section class="container rounded-md overflow-hidden my-12" style="background-image: url('images/static/touch.jpg'); background-size: cover; background-position: center;">
+        <!-- <img src="images/static/touch.jpg" alt="contact" class="w-fit"> -->
+        <div class="row bg-lightBack">
+            <div class="col-span-12 md:col-span-6 flex flex-col justify-center p-5">
+                <h5 class="heading text-white">Get In Touch with us about your chemical product</h5>
+                <p class="paragraph text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic quaerat nulla voluptatibus provident voluptates nemo, voluptatum eos impedit earum quas!</p>
+                <button class="btn">Know More</button>
+            </div>
+            <div class="col-span-12 md:col-span-6 p-5">
+                @livewire('contactForm')
             </div>
         </div>
     </section>

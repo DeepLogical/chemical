@@ -1,4 +1,4 @@
-<form wire:submit.prevent="submit" method="POST" autocomplete="off" class="bg-lightBack rounded-md p-2">
+<form x-show="showForm" x-transition wire:submit.prevent="submit" method="POST" autocomplete="off" class="bg-lightBack rounded-md p-2">
     <div class="mb-3">
         <input type="text" wire:model="name" class="formInput" placeholder="Full Name *" required>
         @error('name') <span class="error">{{ $message }}</span> @enderror
@@ -33,13 +33,6 @@
             @foreach( $product_options as $i ) <option value="{{ $i->id }}">{{ $i->name }}</option> @endforeach
         </select>
         @error('product_id') <span class="error">{{ $message }}</span> @enderror
-    </div>
-    <div class="mb-3">
-        <select wire:model="grade_id" required class="formInput">
-            <option value="">Select Grade</option>
-            @foreach( $grade_options as $i ) <option value="{{ $i->id }}">{{ $i->name }}</option> @endforeach
-        </select>
-        @error('grade_id') <span class="error">{{ $message }}</span> @enderror
     </div>
     <button type="submit" class="btn w-full ">Submit</button>
 </form>
