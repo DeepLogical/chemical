@@ -68,15 +68,14 @@
                     ],
                 // Blogs
                 // Products
-                    [ "link" => "adminProduct", "name" => "Products",
-                        "sublinks" => [
-                            [ "link" => "adminForm", "name" => "Form" ],
-                            [ "link" => "adminProduct", "name" => "Product" ],
-                            // [ "link" => "addUpdateProduct", "name" => "Add Product" ],
-                            // [ "link" => "adminAuthor", "name" => "Author" ],
-                        ]
-                    ],
-                // Products
+                [ "link" => "adminProductmeta", "name" => "Products",
+                "sublinks" => [
+                        [ "link" => "adminProductmeta", "name" => "Add Product Meta" ],
+                        [ "link" => "adminProduct", "name" => "Product" ],
+                        [ "link" => "addUpdateProduct", "name" => "Add Product" ],
+                    ]
+                ],       
+            // Products
         
                 // Pages
                     [ "link" => "adminPages", "name" => "Pages",
@@ -100,7 +99,6 @@
                     [ "link" => "adminContact", "name" => "Forms",
                         "sublinks" => [
                             [ "parent" => "Forms", "link" => "adminContact", "name" => "Contact" ],
-                            [ "link" => "adminForm", "name" => "Product enquiry" ],
                             // [ "parent" => "Forms", "link" => "adminSubscription", "name" => "Subscription" ],
                             // [ "parent" => "Forms", "link" => "adminJoinUs", "name" => "Job Applications" ],
                         ]

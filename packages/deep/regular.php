@@ -117,7 +117,7 @@ public function changeStatus($id, $status){
 </div>
 
 <div wire:ignore class="col-span-12 md:col-span-6">
-    <label class="formLabel">Course Short Decription *</label>
+    <label class="formLabel">Product Short Decription *</label>
     <textarea wire:model="short_desc" class="form-control" name="short_desc" id="short_desc" required></textarea>
 </div>
 <div wire:ignore class="col-span-12 md:col-span-6">

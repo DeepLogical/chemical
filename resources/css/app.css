@@ -32,10 +32,10 @@
         @apply text-xs md:text-sm lg:text-base
     }
     .btn{
-        @apply bg-primary text-center text-sm md:text-base lg:text-lg font-bold text-white hover:bg-white hover:text-primary border-2 border-primary rounded-lg transition duration-700 ease-in-out whitespace-nowrap inline-block w-fit hover:cursor-pointer px-3 lg:px-6 xl:px-8 py-2 lg:py-2 my-2
+        @apply bg-primary text-center text-sm md:text-base lg:text-lg font-bold text-white hover:bg-white hover:text-primary border-2 border-primary rounded-lg transition duration-700 ease-in-out whitespace-nowrap inline-block w-fit hover:cursor-pointer shadow-sm shadow-white hover:shadow-lg px-3 lg:px-6 xl:px-8 py-2 lg:py-2 my-2
     }
     .whiteBtn{
-        @apply  bg-white text-center text-sm md:text-base lg:text-lg font-bold text-primary rounded-lg hover:bg-white hover:text-primary border-2 border-primary transition duration-700 ease-in-out whitespace-nowrap inline-block w-fit hover:cursor-pointer px-3 lg:px-6 xl:px-8 py-2 lg:py-2
+        @apply  bg-white text-center text-sm md:text-base lg:text-lg font-bold text-primary rounded-lg hover:bg-white hover:text-primary border-2 border-primary transition duration-700 ease-in-out whitespace-nowrap inline-block w-fit hover:cursor-pointer shadow-white shadow-sm hover:shadow-lg px-3 lg:px-6 xl:px-8 py-2 lg:py-2
     }    
     .moreBtn{
         @apply text-xs md:text-sm w-fit bg-action text-white border rounded hover:bg-primary hover:border-action hover:text-white transition duration-700 ease-in-out whitespace-nowrap block px-2 md:px-3 py-1 md:py-2

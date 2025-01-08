@@ -17,6 +17,7 @@ use Deep\Pages\Http\Livewire\Pages\MediaGallery;
 use Deep\Pages\Http\Livewire\Pages\Awards;
 use Deep\Pages\Http\Livewire\Pages\RefundPolicy;
 use Deep\Pages\Http\Livewire\Pages\Search;
+use Deep\Pages\Http\Livewire\Pages\ExportImport;
 
 use Deep\Pages\Http\Livewire\Admin\AdminClient;
 use Deep\Pages\Http\Livewire\Admin\AdminPages;
@@ -44,6 +45,8 @@ use Deep\Pages\Http\Livewire\Testimonial\AddUpdateTestimonial;
 use Deep\Pages\Http\Livewire\Testimonial\AdminVideoTestimonials;
 use Deep\Pages\Http\Livewire\Testimonial\AddUpdateVideoTestimonial;
 
+use Deep\Pages\Http\Livewire\Form\SubscribeForm;
+
 use Deep\Pages\Http\Livewire\Review\AdminReview;
 
 Route::middleware(['web'])->group(function () {
@@ -54,13 +57,15 @@ Route::middleware(['web'])->group(function () {
     Route::get("contact-us", Contact::class)->name("contact");
     Route::get("404", FourOFour::class)->name("404");
     Route::get("privacy-policy", Privacy::class)->name("privacy");
-    // Route::get("services", Services::class)->name("services");
+    Route::get("services", Services::class)->name("services");
     Route::get("sitemap", Sitemap::class)->name("sitemap");
     Route::get("thank-you", Thankyou::class)->name("thankyou");
     Route::get("terms-and-conditions", Tnc::class)->name("tnc");
     Route::get("media-gallery", MediaGallery::class)->name("mediagallery");
+    Route::get("subscrib-form", SubscribeForm::class)->name("subscribeform");
     // Route::get("refund-policy", RefundPolicy::class)->name("refundPolicy");
     Route::get("search", Search::class)->name("search");
+    Route::get("exportImport", ExportImport::class)->name("exportImport");
     // Route::get("awards", Awards::class)->name("awards");
 
     Route::middleware(['role:owner|admin|seo'])->prefix('admin')->group(function () {

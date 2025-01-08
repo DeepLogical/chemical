@@ -5,7 +5,7 @@ use Jenssegers\Optimus\Optimus;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use App\Notifications\DeepakNotifications;
+use App\Notifications\DeepNotifications;
 use Illuminate\Support\Facades\Notification;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Response;
@@ -177,9 +177,14 @@ function decode($value){
             [ "type" => "banner-slider-mobile", "path" => 'banner/mobile', "regular_width" => null, "regular_height" => null, "small" => false, "thumbnail" => false, "dimension" => [] ],
             [ "type" => "blog", "path" => 'blog', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
             [ "type" => "news", "path" => 'news', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
+            [ "type" => "podcast", "path" => 'podcast', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
+            [ "type" => "grade", "path" => 'grade', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
+            [ "type" => "board", "path" => 'board', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
+            [ "type" => "coursemeta", "path" => 'coursemeta', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
+            [ "type" => "coursespecial", "path" => 'coursespecial', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
+            [ "type" => "instructor", "path" => 'instructor', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
             [ "type" => "course", "path" => 'course', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
             [ "type" => "teacher", "path" => 'teacher', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
-            [ "type" => "product", "path" => 'product', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
         ];
 
         $row = $data[ array_search($type, array_column( $data, "type" )) ];
@@ -371,7 +376,7 @@ function decode($value){
             if( $type == 'careerForm' ){ $details = [ 'message' => 'Job Application posted', 'url' => route('adminJoinUs') ]; }
             if( $type == 'registration' ){ $details = [ 'message' => 'User registered', 'url' => route('adminUsers') ]; }
             
-            Notification::send($users, new DeepakNotifications($details));
+            Notification::send($users, new DeepNotifications($details));
         }catch (Exception $e) { \Log::warning("Error In sendNotifications ".$e->getMessage() ); }
     }
 
@@ -380,7 +385,7 @@ function decode($value){
             $users = User::whereIn('id', $user_id_array)->get();
             if( $type == 'message' ){ $details = [ 'message' => 'You have a message', 'url' => route('messagesList') ]; }
 
-            Notification::send($users, new DeepakNotifications($details));
+            Notification::send($users, new DeepNotifications($details));
         }catch (Exception $e) { \Log::warning("Error In sendNotificationsToUser ".$e->getMessage() ); }
     }
 

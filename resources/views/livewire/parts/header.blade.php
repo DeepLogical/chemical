@@ -2,14 +2,16 @@
     <nav x-data="{ open: false }" class="w-full pb-1 px-4 shadow-md" style="z-index: 101">
         <div class=" container flex justify-between">
             <div class="py-2 ">
-                <a href="{{ route('home') }}"><img src="/images/logo.jpeg" alt="{{ config('deep.brand') }}" class="nav-logo" width="90" height="102" style="max-width: 100px;"></a>
+                <p class="heading">ADP Traders</p>
+                <!-- <a href="{{ route('home') }}"><img src="/images/logo.jpeg" alt="{{ config('deep.brand') }}" class="nav-logo" width="90" height="102" style="max-width: 100px;"></a> -->
             </div>
             <div class="hidden sm:flex items-center justify-around">
-                <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('Home') }}</x-nav-link>
-                <x-nav-link href="{{ route('about') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('About Us') }}</x-nav-link>
-                <x-nav-link href="{{ route('products') }}" :active="request()->routeIs('products')" class="pr-5">{{ __('products') }}</x-nav-link>
-                <x-nav-link href="{{ route('blogs') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('Blogs') }}</x-nav-link>
-                <x-nav-link href="{{ route('contact') }}" :active="request()->routeIs('sportsListing')" class="pr-5">{{ __('Contact Us') }}</x-nav-link>
+                <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('Home')" class="pr-5">{{ __('Home') }}</x-nav-link>
+                <x-nav-link href="{{ route('about') }}" :active="request()->routeIs('About Us')" class="pr-5">{{ __('About Us') }}</x-nav-link>
+                <x-nav-link href="{{ route('exportImport') }}" :active="request()->routeIs('exportImport')" class="pr-5">{{ __('Export / Import') }}</x-nav-link>
+                <x-nav-link href="{{ route('productListing') }}" :active="request()->routeIs('productListing')" class="pr-5">{{ __('Products') }}</x-nav-link>
+                <x-nav-link href="{{ route('blogs') }}" :active="request()->routeIs('Blogs')" class="pr-5">{{ __('Blogs') }}</x-nav-link>
+                <x-nav-link href="{{ route('contact') }}" :active="request()->routeIs('Contact Us')" class="pr-5">{{ __('Contact Us') }}</x-nav-link>
                 <ul class="flex flex-wrap items-center justify-end">
                     @if( !Auth::check() )
                         <div class="flex text-white">

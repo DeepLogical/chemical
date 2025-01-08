@@ -24,7 +24,7 @@
         <p class="border-b-2 text-xl font-bold mt-10 pb-3 mb-4">Tag</p>
         <divl>
             @foreach($tag as $i)
-                <a href="/{{ $i->type }}/{{ $i->url }}" wire:key="side-tag-{{ $loop->index }}" class="p-2 border-2 inline-block mr-3 mb-3 rounded-md hover:border-action hover:text-action" class=" text-gray-500 py-2 text-sm">{{ $i->name }}</a>
+                <a href="/{{ $i->type }}/{{ $i->url }}" wire:key="side-tag-{{ $loop->index }}" class="p-2 border-2 inline-block mr-3 mb-3 rounded-md hover:border-action hover:text-action text-gray-500 py-2 text-sm">{{ $i->name }}</a>
             @endforeach
         </div>
     </div>

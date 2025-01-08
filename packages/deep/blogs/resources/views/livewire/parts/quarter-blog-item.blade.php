@@ -1,5 +1,5 @@
 <div class="deepShadow rounded h-full relative overflow-hidden rounded bg-cover group amitBtnGroup" style="background-image: url('/storage/blog/{{ optional($i->media)->media}}');">
-   
+    <div class="tint h-full w-full absolute top-0 left-0"></div>
     <div class="p-3 absolute bottom-0 left-0">
         <h3 class="font-bold mb-2 text-center oneliner text-white">
             <a href="{{ $i->url }}">{{ $i->name }}</a>

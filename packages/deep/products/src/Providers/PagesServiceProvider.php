@@ -5,21 +5,15 @@ namespace Deep\Products\Providers;
 use Livewire\Livewire;
 use Illuminate\Support\ServiceProvider;
 
+use Deep\Products\Http\Livewire\Admin\AdminProductmeta;
 use Deep\Products\Http\Livewire\Admin\AdminProduct;
+use Deep\Products\Http\Livewire\Admin\AddUpdateProduct;
 
-use Deep\Products\Http\Livewire\Pages\ProductPage;
-use Deep\Products\Http\Livewire\Pages\Form;
+use Deep\Products\Http\Livewire\Pages\ProductListing;
+use Deep\Products\Http\Livewire\Pages\ProductSingle;
 
-use Deep\Products\Http\Livewire\Parts\SingleProductItem;
-use Deep\Products\Http\Livewire\Parts\SingleProductItemBlock;
-use Deep\Products\Http\Livewire\Parts\SingleSidebar;
-use Deep\Products\Http\Livewire\Parts\SuggestProducts;
-use Deep\Products\Http\Livewire\Parts\WriteForUsBlock;
-use Deep\Products\Http\Livewire\Parts\VerticalProductItem;
-use Deep\Products\Http\Livewire\Parts\SmallProductItem;
-use Deep\Products\Http\Livewire\Parts\SmallProductItemBlock;
-use Deep\Products\Http\Livewire\Parts\QuarterProductItem;
-use Deep\Products\Http\Livewire\Parts\HorizontalProductItem;
+use Deep\Products\Http\Livewire\Parts\ProductSidebar;
+use Deep\Products\Http\Livewire\Parts\SuggestProduct;
 
 class PagesServiceProvider extends ServiceProvider
 {
@@ -44,21 +38,16 @@ class PagesServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'deep');
         $this->publishes([ __DIR__.'/../../resources/views' => resource_path('views/vendor/deep'), ], 'views');
 
-        // Livewire::component('addUpdateProduct', AddUpdateProduct::class);
+
+        Livewire::component('adminProductmeta', AdminProductmeta::class);
+        Livewire::component('adminProductSpecial', AdminProductSpecial::class);
         Livewire::component('adminProduct', AdminProduct::class);
-
-        Livewire::component('productPage', ProductPage::class);
-        Livewire::component('writeForUs', WriteForUs::class);
-
-        Livewire::component('singleProductItem', SingleProductItem::class);
-        Livewire::component('singleProductItemBlock', SingleProductItemBlock::class);
-        Livewire::component('singleSidebar', SingleSidebar::class);
-        Livewire::component('suggestProducts', SuggestProducts::class);
-        Livewire::component('writeForUsBlock', WriteForUsBlock::class);
-        Livewire::component('verticalProductItem', VerticalProductItem::class);
-        Livewire::component('smallProductItem', SmallProductItem::class);
-        Livewire::component('quarterProductItem', QuarterProductItem::class);
-        Livewire::component('horizontalProductItem', HorizontalProductItem::class);
-        Livewire::component('form', Form::class);
+        Livewire::component('adminInstructor', AdminInstructor::class);
+        Livewire::component('addUpdateProduct', AddUpdateProduct::class);
+        Livewire::component('productListing', ProductListing::class);
+        Livewire::component('productSingle', ProductSingle::class);
+        Livewire::component('productSidebar', ProductSidebar::class);
+        Livewire::component('suggestProduct', SuggestProduct::class);
+        // Livewire::component('addUpdateProduct', AddUpdateProduct::class);
     }
 }

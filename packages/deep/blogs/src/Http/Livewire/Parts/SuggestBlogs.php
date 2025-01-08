@@ -14,8 +14,8 @@ class SuggestBlogs extends Component
         $this->data = Blog::active()->limit(15)->inRandomOrder()->get();
 
         $hp                         =   getHP( $this->model, $this->model_id, 'blog_heading', 'blog_text' );
-        $this->heading              =   (!empty($hp) && isset($hp['h'])) ? $hp['h'] : "Latest Blogs And News";
-        $this->paragraph            =   (!empty($hp) && isset($hp['p'])) ? $hp['p'] : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+        $this->heading              =   (!empty($hp) && isset($hp['h'])) ? $hp['h'] : "Interesting Reads";
+        $this->paragraph            =   (!empty($hp) && isset($hp['p'])) ? $hp['p'] : "Beautifully crafted blogs and articles";
     }
 
     public function render(){ return view('deep::livewire.parts.suggest-blogs'); }

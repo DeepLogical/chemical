@@ -22,7 +22,7 @@ class ContactForm extends Component
             $this->phone                =   Auth::user()->phone;
         }
 
-        // Mail::to( 'amit.khare588@gmail.com' )->cc( config('deep.email') )->send(new ContactMail( encode( 1 ) ));
+        // Mail::to( 'almora1deepak@gmail.com' )->cc( config('deep.email') )->send(new ContactMail( encode( 1 ) ));
     }
     
     public function render(){ return view('deep::livewire.form.contact-form'); }

@@ -50,6 +50,7 @@ use Deep\Pages\Http\Livewire\Pages\VideoGallery;
 use Deep\Pages\Http\Livewire\Pages\Awards;
 use Deep\Pages\Http\Livewire\Pages\RefundPolicy;
 use Deep\Pages\Http\Livewire\Pages\Search;
+use Deep\Pages\Http\Livewire\Pages\ExportImport;
 
 use Deep\Pages\Http\Livewire\Admin\AddUpdatePage;
 use Deep\Pages\Http\Livewire\Admin\AdminClient;
@@ -165,6 +166,7 @@ class PagesServiceProvider extends ServiceProvider
         Livewire::component('awards', Awards::class);
         Livewire::component('refundPolicy', RefundPolicy::class);
         Livewire::component('search', Search::class);
+        Livewire::component('exportImport', ExportImport::class);
         
         Livewire::component('adminClient', AdminClient::class);
         Livewire::component('adminPages', AdminPages::class);
