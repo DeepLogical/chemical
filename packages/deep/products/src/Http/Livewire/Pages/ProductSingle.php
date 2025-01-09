@@ -5,6 +5,7 @@ namespace Deep\Products\Http\Livewire\Pages;
 use Livewire\Component;
 
 use Deep\Products\Models\Product;
+use Deep\Products\Models\Form;
 
 class ProductSingle extends Component
 {

@@ -498,7 +498,7 @@
             "dist": {
                 "type": "path",
                 "url": "./packages/deep/products",
-                "reference": "a02f6b89806500bcca58058d4064dbb179dcef58"
+                "reference": "c4379681df100b4d18539fec012bc6c7b5b0981e"
             },
             "type": "library",
             "extra": {
@@ -515,11 +515,11 @@
             },
             "authors": [
                 {
-                    "name": "Deepak Tiwari",
+                    "name": "DEEPAK",
                     "email": "almora1deepak@gmail.com"
                 }
             ],
-            "description": "Products System by DEEPAK",
+            "description": "Products System by Deepak",
             "transport-options": {
                 "relative": true
             }
@@ -3522,12 +3522,12 @@
             "version": "3.8.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/briannesbitt/Carbon.git",
+                "url": "https://github.com/CarbonPHP/carbon.git",
                 "reference": "129700ed449b1f02d70272d2ac802357c8c30c58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/129700ed449b1f02d70272d2ac802357c8c30c58",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/129700ed449b1f02d70272d2ac802357c8c30c58",
                 "reference": "129700ed449b1f02d70272d2ac802357c8c30c58",
                 "shasum": ""
             },

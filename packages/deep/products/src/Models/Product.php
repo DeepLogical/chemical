@@ -35,9 +35,6 @@ class Product extends Model
     
     public function scopeActive($query){ return $query->where('status', 1); }
 
-
-
-
      protected $fillable = [  'name', 'manufacturer', 'functions', 'end', 'tds', 'url', 'media_id', 'status' ];
 
     public function scopeSearch($query, $val){

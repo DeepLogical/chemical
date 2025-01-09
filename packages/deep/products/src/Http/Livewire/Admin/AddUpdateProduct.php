@@ -3,133 +3,163 @@
 namespace Deep\Products\Http\Livewire\Admin;
 
 use Livewire\Component;
-
 use Deep\Products\Models\Product;
 use Deep\Pages\Models\Pages;
 use Deep\Products\Models\Productmeta;
-
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\DB;
-
+use Image; // Added the Image class import
 
 class AddUpdateProduct extends Component
 {
     use WithPagination;
     use WithFileUploads;
 
-    public $name, $status, $manufacturer, $media_id, $image, $old_image, $data_id, $functions, $end, $tds, $url;
+    public $name, $status, $manufacturer, $meta_id, $media_id, $image, $old_image, $data_id, $functions, $end, $tds, $url;
+    public $tagSelected = [], $tagOptions = [], $catSelected = [], $catOptions = [];
     public $isOpen = 0, $perPage = 100, $search;
-
     public $images = [];
-
     public $links = [
         [ "name" => "Products", "link" => "adminProduct" ],
         [ "name" => "Productmeta", "link" => "adminProductmeta" ],
     ];
-    
-    public function render(){
-        $data =   Product::with(['media:id,alt,path'])->search($this->search)->orderBy('id', 'DESC')->paginate($this->perPage);
-        return view('deep::livewire.admin.admin-product', [ 'data' => $data ] )->layout('layouts.admin');
+
+    public function mount($id = null)
+    {
+        if ($id) {
+            $this->data_id = decode($id);
+            $data = Product::find($this->data_id);
+
+            if (!$data) {
+                return redirect(route('404'));
+            }
+
+            $this->name = $data->name;
+            $this->url = $data->url;
+            $this->manufacturer = $data->manufacturer;
+            $this->functions = $data->functions;
+            $this->end = $data->end;
+            $this->tds = $data->tds;
+            $this->media_id = optional($data->media)->id;
+            $this->meta_id = optional($data->meta)->id;
+            $this->old_image = optional($data->media)->path;
+
+            $catArray = [];
+            $tagArray = [];
+            foreach ($data->productmeta as $i) {
+                if ($i->type === "category") {
+                    array_push($catArray, $i->id);
+                }
+                if ($i->type === "tag") {
+                    array_push($tagArray, $i->id);
+                }
+            }
+            $this->catSelected = $catArray;
+            $this->tagSelected = $tagArray;
+        }
+
+        $this->catOptions = Productmeta::select('id', 'name')->where('type', 'category')->get();
+        $this->tagOptions = Productmeta::select('id', 'name')->where('type', 'tag')->get();
     }
 
-    public function submit(){
+    public function render(){ return view('deep::livewire.admin.add-update-product')->layout('layouts.admin'); }
+
+    public function edit($id)
+    {
+        $this->data_id = decode($id);
+        $check = Product::where('id', $this->data_id)->first();
+
+        if ($check) {
+            $this->name = $check->name;
+            $this->manufacturer = $check->manufacturer;
+            $this->end = $check->end;
+            $this->functions = $check->functions;
+            $this->tds = $check->tds;
+            $this->status = $check->status;
+            $this->old_image = optional($check->media)->path;
+            $this->media_id = $check->media_id;
+            $this->isOpen = true;
+        }
+    }
+
+    private function resetInputFields()
+    {
+        $this->name = null;
+        $this->manufacturer = null;
+        $this->end = null;
+        $this->functions = null;
+        $this->tds = null;
+        $this->status = null;
+        $this->media_id = null;
+        $this->data_id = null;
+        $this->isOpen = false;
+        $this->image = null;
+        $this->old_image = null;
+    }
+
+    public function changeStatus($id, $status)
+    {
+        $message = changeStatus('products', 'status', $id, $status);
+        $this->dispatch('alert', ['type' => 'success', 'message' => $message]);
+       
+    }
+
+
+    public function submit()
+    {
         $this->validate([
-            'name'         => 'required',
-            'status'       => 'required',
+            'name' => 'required',
+            'url' => 'required',
             'manufacturer' => 'required',
-            'functions'    => 'required',
-            'tds'          => 'required',
-            'url'          => 'required',
-            'end'          => 'required',
-
-
+            'functions' => 'required',
+            'end' => 'required',
+            'tds' => 'required',
         ]);
 
-        if(!$this->data_id){
+        if (!$this->media_id) {
             $this->validate([
                 'image' => 'required | image | max:2048',
             ]);
         }
 
         DB::transaction(function () {
-            if($this->image){
-                $this->media_id = addOrUpdateSingleImage($this->image, 'product', $this->name, $this->name, $this->media_id );
+            $url = sanitizeURL($this->url);
+
+            if ($this->image) {
+                $this->media_id = addOrUpdateSingleImage($this->image, 'product', $this->name, $url, $this->media_id);
             }
 
-            Product::updateOrCreate(['id' => $this->data_id], [
-                'name'          =>  $this->name,
-                'status'        =>  $this->status,
-                'media_id'      =>  $this->media_id,
-                'manufacturer'  =>  $this->manufacturer, 
-                'functions'     =>  $this->functions,
-                'tds'           =>  $this->tds,
-                'url'           =>  $this->url,
-                'end'           =>  $this->end,
+            $entry = Product::updateOrCreate(['id' => $this->data_id], [
+                'name' => $this->name,
+                'url' => $url,
+                'media_id' => $this->media_id,
+                'status' => 1,
+                'manufacturer' => $this->manufacturer,
+                'functions' => $this->functions,
+                'end' => $this->end,
+                'tds' => $this->tds,
             ]);
-            
-            $this->dispatch('alert', ['type' => 'success',  'message' => $this->data_id ? 'Product Updated Successfully.' : 'Product Created Successfully.', ]);
-            $this->closeModal();
+
+            $productMeta = [];
+            foreach ($this->catSelected as $i) {
+                array_push($productMeta, (int)$i);
+            }
+            foreach ($this->tagSelected as $i) {
+                array_push($productMeta, (int)$i);
+            }
+
+            $productMeta = array_merge($this->catSelected, $this->tagSelected);
+            pivotEntry('product_productmeta', $entry->id, $productMeta, 'product_id', 'productmeta_id');
+            $check = Product::select('url')->findOrFail($entry->id);
+            if ($check) {
+                addOrUpdateMeta($check->url, $this->name, $this->meta_id, $this->media_id);
+            }
+
+            $this->dispatch('alert', ['type' => 'success', 'message' => $this->data_id ? 'Product Updated Successfully.' : 'Product Created Successfully.']);
         }, 3);
+        return redirect(route('adminProduct'));
     }
 
-    public function edit($id){
-        $this->data_id      = decode( $id );
-        $check = Product::where('id', $this->data_id)->first();
-
-        if( $check ){
-            $this->name                 = $check->name;
-            $this->manufacturer         = $check->manufacturer;
-            $this->end                  = $check->end;
-            $this->functions            = $check->functions;
-            $this->tds                  = $check->tds;
-            $this->status               = $check->status;
-            $this->old_image            = optional($check->media)->path;
-            $this->media_id             = $check->media_id;
-            $this->isOpen               = true;
-        }
-    }
-
-    private function resetInputFields(){
-        $this->name                 = null;
-        $this->manufacturer         = null;
-        $this->end                  = null;
-        $this->functions            = null;
-        $this->tds                  = null;
-        $this->status               = null;
-        $this->media_id             = null;
-        $this->data_id              = null;
-        $this->isOpen               = false;
-        $this->image                = null;
-        $this->old_image            = null;
-    }
-
-    public function changeStatus($id, $status){
-        $message = changeStatus('products', 'status', $id, $status);
-        $this->dispatch('alert', ['type' => 'success',  'message' => $message ]);
-    }
     
-    public function openModal(){ $this->resetInputFields(); $this->isOpen = true; }
-    public function closeModal(){ $this->resetInputFields(); }
-    protected $listeners = ['searchUpdated', 'perPageUpdated', 'openModalCalled' ];
-    public function searchUpdated($search){ $this->search = $search; }
-    public function perPageUpdated($perPage){ $this->perPage = $perPage; }
-    public function openModalCalled(){ $this->isOpen = 1; $this->status = 1; }
-
-    public function resize(){
-        foreach ($this->images as $key => $i) {
-            $fileName = $i->getClientOriginalName(); // Retrieve original filename        
-            Image::make($i->path())->fit(350, 150, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            })->save(public_path('small/').$fileName); // Save with original filename
-            
-            Image::make($i->path())->fit(100, 42, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            })->save(public_path('thumbnail/').$fileName); // Save with original filename
-
-            $this->dispatch('alert', ['type' => 'success',  'message' => "Image Resized" ]);
-        }
-    }
 }

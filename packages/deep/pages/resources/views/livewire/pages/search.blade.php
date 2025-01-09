@@ -39,6 +39,8 @@
         
     @endif
 
-    @livewire('suggestProducts')
-    @livewire('suggestBlogs')
+    @livewire('suggestProduct')
+    <div>
+        @livewire('suggestBlogs')
+    </div>
 </div>

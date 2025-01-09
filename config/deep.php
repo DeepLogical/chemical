@@ -73,6 +73,7 @@
                         [ "link" => "adminProductmeta", "name" => "Add Product Meta" ],
                         [ "link" => "adminProduct", "name" => "Product" ],
                         [ "link" => "addUpdateProduct", "name" => "Add Product" ],
+                        [ "link" => "adminForm", "name" => "Product Form" ],
                     ]
                 ],       
             // Products

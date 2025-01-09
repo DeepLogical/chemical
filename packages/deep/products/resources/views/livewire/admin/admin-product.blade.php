@@ -18,28 +18,24 @@
                 <tr wire:key="data-{{ $loop->index }}">
                     <td>{{ $loop->index +1 }}</td>
                     <td>
-                        <a href="/{{ $i->url }}" target="_blank">
-                            <img src="/storage/product/{{ optional($i->media)->media}}" class="w-32" loading="lazy">
-                            {{ $i->name }}
-                        </a>
+                    <img src="/storage/product/{{ optional($i->media)->media}}" class="w-32" loading="lazy">
+                    {{ $i->name }}
                     </td>
+                    <td>{{ $i->manufacturer}}</td>
+                    <td>{{ $i->functions}}</td>
+                    <td>{{ $i->tds}}</td>
+                    <td>{{ $i->end}}</td>
                     <td>
-                        <strong>Category</strong>: 
-                        @foreach($i->category as $j)
-                            <a href="/{{ $j->type }}/{{ $j->url }}" target="_blank" wire:key="category-{{ $loop->index }}">{{ $j->name }}, </a>
-                        @endforeach<br/>
-                        <strong>Tag</strong>: 
-                        @foreach($i->tag as $j)
-                            <a href="/{{ $j->type }}/{{ $j->url }}" target="_blank" wire:key="tag-{{ $loop->index }}">{{ $j->name }}, </a>
-                        @endforeach
+                        <div class="gsap">
+                            <label class="switch">
+                                <input type="checkbox" wire:click="changeStatus('{{ encode($i->id) }}', '{{ encode($i->status) }}')" @if($i->status) checked @endif/>
+                                <svg viewBox="0 0 38 24" filter="url(#goo)">
+                                    <circle class="default" cx="12" cy="12" r="8" />
+                                    <circle class="dot" cx="26" cy="12" r="8" />
+                                </svg>
+                            </label>
+                        </div>
                     </td>
-                    <td>
-                        @if($i->meta)
-                            <span class="{{ strlen( $i->meta->title ) < 50 || strlen( $i->meta->title ) > 60 ? 'bg-action text-white px-1 py-1' : '' }}">Title: {{ $i->meta->title }} - {{ strlen( $i->meta->title ) }}</span><br/>
-                            <span class="{{ strlen( $i->meta->description ) < 140 || strlen( $i->meta->description ) > 160 ? 'bg-action text-white px-1 py-1' : '' }}">Description: {{ $i->meta->description}} -  {{ strlen( $i->meta->description ) }}</span>
-                        @endif
-                    </td>
-                    <td>{{ \Carbon\Carbon::parse($i->updated_at)->isoFormat('Do MMM YYYY') }}</td>
                     <td>
                         <div class="flex items-center">
                             <div class="threeDots">

@@ -171,20 +171,11 @@ function decode($value){
             [ "type" => "client", "path" => 'client', "regular_width" => null, "regular_height" => null, "small" => false, "thumbnail" => false, "dimension" => [] ],
             [ "type" => "brands", "path" => 'brands', "regular_width" => null, "regular_height" => null, "small" => false, "thumbnail" => false, "dimension" => [] ],
             [ "type" => "service", "path" => 'service', "regular_width" => 600, "regular_height" => 600, "small" => false, "thumbnail" => false, "dimension" => [] ],
-            [ "type" => "technology", "path" => 'technology', "regular_width" => null, "regular_height" => null, "small" => false, "thumbnail" => false, "dimension" => [] ],
             [ "type" => "testimonials", "path" => 'testimonials', "regular_width" => null, "regular_height" => null, "small" => false, "thumbnail" => false, "dimension" => [] ],
             [ "type" => "banner-slider", "path" => 'banner', "regular_width" => null, "regular_height" => null, "small" => false, "thumbnail" => false, "dimension" => [] ],
             [ "type" => "banner-slider-mobile", "path" => 'banner/mobile', "regular_width" => null, "regular_height" => null, "small" => false, "thumbnail" => false, "dimension" => [] ],
             [ "type" => "blog", "path" => 'blog', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
-            [ "type" => "news", "path" => 'news', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
-            [ "type" => "podcast", "path" => 'podcast', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
-            [ "type" => "grade", "path" => 'grade', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
-            [ "type" => "board", "path" => 'board', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
-            [ "type" => "coursemeta", "path" => 'coursemeta', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
-            [ "type" => "coursespecial", "path" => 'coursespecial', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
-            [ "type" => "instructor", "path" => 'instructor', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
-            [ "type" => "course", "path" => 'course', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
-            [ "type" => "teacher", "path" => 'teacher', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
+            [ "type" => "product", "path" => 'product', "regular_width" => null, "regular_height" => null, "small" => true, "thumbnail" => true, "dimension" => [ "small-height" => 150, "small-width" => 350, "thumb-height" => 42, "thumb-width" => 100 ] ],
         ];
 
         $row = $data[ array_search($type, array_column( $data, "type" )) ];

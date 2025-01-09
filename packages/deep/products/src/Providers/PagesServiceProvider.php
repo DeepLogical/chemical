@@ -11,6 +11,8 @@ use Deep\Products\Http\Livewire\Admin\AddUpdateProduct;
 
 use Deep\Products\Http\Livewire\Pages\ProductListing;
 use Deep\Products\Http\Livewire\Pages\ProductSingle;
+use Deep\Products\Http\Livewire\Pages\Form;
+
 
 use Deep\Products\Http\Livewire\Parts\ProductSidebar;
 use Deep\Products\Http\Livewire\Parts\SuggestProduct;
@@ -48,6 +50,7 @@ class PagesServiceProvider extends ServiceProvider
         Livewire::component('productSingle', ProductSingle::class);
         Livewire::component('productSidebar', ProductSidebar::class);
         Livewire::component('suggestProduct', SuggestProduct::class);
+        Livewire::component('form', Form::class);
         // Livewire::component('addUpdateProduct', AddUpdateProduct::class);
     }
 }

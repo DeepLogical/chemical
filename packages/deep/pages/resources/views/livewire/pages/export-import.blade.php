@@ -66,7 +66,7 @@
     </section>
 
     <section>
-        <!-- @livewire ('suggestProducts') -->
+        @livewire ('suggestProduct')
     </section>
 
     <section>
